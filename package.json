@@ -1,0 +1,12 @@
+{
+  "name": "salary-manage-system",
+  "version": "1.0.0",
+  "description": "员工薪资管理系统",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "mecci30",
+  "license": "ISC"
+}
