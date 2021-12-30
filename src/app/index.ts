@@ -1,4 +1,6 @@
 import express from "express";
+import userRouter from "../user/user.router";
+import authRouter from "../auth/auth.router";
 import { defaultErrorHandler } from "./app.middleware";
 
 /**
@@ -14,6 +16,10 @@ app.use(express.json());
 /**
  * 应用路由
  */
+/**
+ * 应用路由
+ */
+app.use(userRouter, authRouter);
 
 /**
  * 使用异常处理器
