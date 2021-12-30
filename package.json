@@ -4,7 +4,9 @@
   "description": "员工薪资管理系统",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "tsc-watch --onSuccess \"node dist/main.js\"",
+    "build": "tsc -p tsconfig.build.json"
   },
   "keywords": [],
   "author": "mecci30",
@@ -16,6 +18,7 @@
     "@types/express": "^4.17.3",
     "@types/node": "^17.0.5",
     "dotenv": "^8.3.0",
+    "tsc-watch": "^4.2.3",
     "typescript": "^3.8.3"
   }
 }
