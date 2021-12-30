@@ -5,6 +5,7 @@ import {
   updateSalary,
   deleteSalary,
   getSalarys,
+  getOneSalary,
 } from "./salary.service";
 
 /**
@@ -92,6 +93,26 @@ export const index = async (
     const salarys = await getSalarys();
 
     response.send(salarys);
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * 获取某一员工的具体薪资信息
+ */
+export const show = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+) => {
+  // 获取该员工的id
+  const { employeeId } = request.params;
+
+  try {
+    const data = await getOneSalary(parseInt(employeeId, 10));
+
+    response.send(data);
   } catch (error) {
     next(error);
   }

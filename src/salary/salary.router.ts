@@ -24,6 +24,11 @@ router.delete("/salary/:salaryId", salaryController.destory);
 router.get("/salary", salaryController.index);
 
 /**
+ * 员工薪资详细信息
+ */
+router.get("/salary/:employeeId", salaryController.show);
+
+/**
  * 默认导出路由
  */
 export default router;

@@ -77,19 +77,23 @@ export const getSalarys = async () => {
 /**
  * 获取员工薪资具体信息
  */
-export const getOneSalary = async (salaryId: number) => {
+export const getOneSalary = async (employeeId: number) => {
   // 准备查询
   const statement = `
     SELECT
-      *
+      basic, 
+      butei,
+      jiangli,
+      shiyebaoxian,
+      zhufanggongjijin
     FROM
       salary
     WHERE
-      salary.id = ?
+      salary.employeeId = ?
   `;
 
   // 执行查询
-  const [data] = await connection.promise().query(statement, salaryId);
+  const [data] = await connection.promise().query(statement, employeeId);
 
   // 提供数据
   return data[0];
