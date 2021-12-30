@@ -1,3 +1,5 @@
+import { salaryModel } from "../salary/salary.model";
+
 export enum employeeType {
   manager = "manager",
   accountStaff = "accountStaff",
@@ -13,4 +15,5 @@ export interface employeeModel {
   unit?: string;
   occupation?: employeeType;
   telphone?: string;
+  salary?: salaryModel | null;
 }

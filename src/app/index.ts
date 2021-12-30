@@ -2,6 +2,7 @@ import express from "express";
 import userRouter from "../user/user.router";
 import authRouter from "../auth/auth.router";
 import employeeRouter from "../employee/employee.router";
+import salaryRouter from "../salary/salary.router";
 import { defaultErrorHandler } from "./app.middleware";
 
 /**
@@ -20,7 +21,7 @@ app.use(express.json());
 /**
  * 应用路由
  */
-app.use(userRouter, authRouter, employeeRouter);
+app.use(userRouter, authRouter, employeeRouter, salaryRouter);
 
 /**
  * 使用异常处理器

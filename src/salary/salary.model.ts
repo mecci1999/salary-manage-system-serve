@@ -1,4 +1,4 @@
-export interface salary {
+export interface salaryModel {
   id?: number;
   employeeId?: number;
   basic?: string;

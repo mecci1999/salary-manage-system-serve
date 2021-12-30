@@ -70,14 +70,23 @@ export const getEmployees = async () => {
       employee.age,
       employee.unit,
       employee.occupation,
-      employee.telphone 
+      employee.telphone,
+      JSON_OBJECT(
+        'basic',salary.basic,
+        'butei',salary.butei,
+        'jiangjin',salary.jiangli,
+        'shiyebaoxian',salary.shiyebaoxian,
+        'zhufanggongjijin',salary.zhufanggongjijin
+      ) AS salary
     FROM
       employee
+    LEFT JOIN
+      salary ON salary.employeeId = employee.id
   `;
 
   // 执行查询
   const [data] = await connection.promise().query(statement);
 
   // 提供数据
-  return data;
+  return data as employeeModel;
 };
