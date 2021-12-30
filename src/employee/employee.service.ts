@@ -57,3 +57,27 @@ export const deleteEmployee = async (employeeId: number) => {
   //提供数据
   return data;
 };
+
+/**
+ * 获取员工列表
+ */
+export const getEmployees = async () => {
+  // 准备查询
+  const statement = `
+    SELECT
+      employee.name,
+      employee.sex,
+      employee.age,
+      employee.unit,
+      employee.occupation,
+      employee.telphone 
+    FROM
+      employee
+  `;
+
+  // 执行查询
+  const [data] = await connection.promise().query(statement);
+
+  // 提供数据
+  return data;
+};

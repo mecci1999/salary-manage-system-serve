@@ -19,6 +19,11 @@ router.patch("/employee/:employeeId", employeeController.update);
 router.delete("/employee/:employeeId", employeeController.destory);
 
 /**
+ * 员工列表信息
+ */
+router.get("/employee", employeeController.index);
+
+/**
  * 默认导出路由
  */
 export default router;
