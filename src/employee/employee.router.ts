@@ -6,7 +6,7 @@ const router = express.Router();
 /**
  * 创建员工
  */
-router.post("/employee", employeeController.store);
+router.post("/employee/add", employeeController.store);
 
 /**
  * 更新员工

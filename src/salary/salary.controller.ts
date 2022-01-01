@@ -20,9 +20,14 @@ export const store = async (
   const { basic, butei, jiangli, shiyebaoxian, zhufanggongjijin } =
     request.body;
 
+  const { employeeId: id } = request.params;
+
+  const employeeId = parseInt(id, 10);
+
   //创建用户
   try {
     const data = await createSalary({
+      employeeId,
       basic,
       butei,
       jiangli,
