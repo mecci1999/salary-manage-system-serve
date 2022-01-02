@@ -24,6 +24,11 @@ router.delete("/employee/:employeeId", employeeController.destory);
 router.get("/employee", employeeController.index);
 
 /**
+ * 按Id获取员工信息
+ */
+router.get("/employee/:employeeId", employeeController.show);
+
+/**
  * 默认导出路由
  */
 export default router;

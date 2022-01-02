@@ -99,11 +99,11 @@ export const getEmployees = async () => {
 export const getEmployeeById = async (employeeId: number) => {
   // 准备查询
   const statement = `
-    SLECET
+    SELECT
       *
     FROM
       employee
-    WHERE employee.id = ?
+    WHERE id = ?
   `;
 
   // 执行查询

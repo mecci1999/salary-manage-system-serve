@@ -81,13 +81,21 @@ export const getOneSalary = async (employeeId: number) => {
   // 准备查询
   const statement = `
     SELECT
-      basic, 
-      butei,
-      jiangli,
-      shiyebaoxian,
-      zhufanggongjijin
+      employee.name,
+      employee.age,
+      employee.sex,
+      employee.unit,
+      employee.occupation,
+      employee.telphone,
+      salary.basic, 
+      salary.butei,
+      salary.jiangli,
+      salary.shiyebaoxian,
+      salary.zhufanggongjijin
     FROM
       salary
+    LEFT JOIN
+      employee ON employee.id = salary.employeeId
     WHERE
       salary.employeeId = ?
   `;

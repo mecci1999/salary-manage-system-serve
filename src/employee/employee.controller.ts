@@ -5,6 +5,7 @@ import {
   deleteEmployee,
   updateEmployee,
   getEmployees,
+  getEmployeeById,
 } from "./employee.service";
 
 /**
@@ -93,6 +94,24 @@ export const index = async (
     const employees = await getEmployees();
 
     response.send(employees);
+  } catch (error) {
+    next(error);
+  }
+};
+
+// 获取员工列表信息
+export const show = async (
+  request: Request,
+  response: Response,
+  next: NextFunction
+) => {
+  // 获取员工信息
+  try {
+    const { employeeId } = request.params;
+
+    const employee = await getEmployeeById(parseInt(employeeId, 10));
+
+    response.send(employee);
   } catch (error) {
     next(error);
   }
